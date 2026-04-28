@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio S5 — ALEDJI Ar-Rachad</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #fff;
+    color: #1a1a1a;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: #0f172a;
+    padding: 4.5rem 2.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(59,130,246,0.2) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #475569;
+    margin-bottom: 1.75rem;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: #93c5fd;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    font-size: 12.5px;
+    color: #64748b;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #3b82f6; flex-shrink: 0; }
+
+  /* ── PAGE ── */
+  .page { max-width: 860px; margin: 0 auto; padding: 0 2.5rem; }
+
+  /* ── GRAND TITRE DE SECTION ── */
+  .big-title {
+    font-family: 'Lora', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 3.5rem 0 0.6rem;
+  }
+  .divider {
+    width: 50px; height: 4px;
+    background: #3b82f6;
+    border-radius: 2px;
+    margin: 0.6rem auto 2.5rem;
+  }
+
+  /* ── SOUS-TITRE (ex: Blocs de compétences) ── */
+  .sub-title {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: center;
+    margin-bottom: 0.4rem;
+  }
+  .sub-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #3b82f6;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.4rem;
+  }
+  .sub-divider {
+    width: 30px; height: 3px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    margin: 0.4rem auto 2rem;
+  }
+
+  /* ── INTRO TEXT ── */
+  .intro-text {
+    max-width: 700px;
+    margin: 0 auto 3.5rem;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.9;
+    padding: 1.75rem 2rem;
+    background: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 10px 10px 0;
+  }
+
+  /* ── UE SECTION ── */
+  .ue-section { padding-bottom: 3.5rem; border-bottom: 1px solid #f0f0f0; }
+  .ue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.25rem;
+  }
+  .ue-card {
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    border-top: 3px solid #3b82f6;
+  }
+  .ue-card h3 {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.65rem;
+  }
+  .ue-card p { font-size: 13px; color: #64748b; line-height: 1.65; }
+  .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 0.85rem; }
+  .pill {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    font-weight: 500;
+  }
+
+  /* ── SAE SECTION ── */
+  .sae-section { padding-bottom: 3.5rem; border-bottom: 1px solid #f0f0f0; }
+  .sae-item { padding: 2rem 0; border-bottom: 1px solid #f0f0f0; }
+  .sae-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .sae-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.25rem; }
+  .sae-num {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #3b82f6;
+    padding: 3px 11px;
+    border-radius: 100px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .sae-title {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .sae-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .sae-col h4 {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .sae-col ul { padding-left: 1rem; font-size: 13.5px; color: #475569; line-height: 1.85; }
+  .sae-col ul li { margin-bottom: 0.1rem; }
+
+  /* ── CONCLUSION ── */
+  .conclusion-section { padding-bottom: 4rem; border-bottom: 1px solid #f0f0f0; }
+  .conclusion-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    color: #334155;
+    line-height: 1.95;
+    padding: 2rem 2.5rem;
+    background: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+  }
+
+  /* ── IDENTITY ── */
+  .identity {
+    margin: 3.5rem 0 4.5rem;
+    padding: 2.25rem;
+    background: #0f172a;
+    border-radius: 14px;
+  }
+  .identity-top {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .avatar {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: #3b82f6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .identity-top h3 { font-family: 'Lora', serif; font-size: 1.15rem; color: #fff; font-weight: 700; }
+  .identity-top p { font-size: 13px; color: #64748b; margin-top: 2px; }
+  .identity-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2.5rem; font-size: 13px; }
+  .identity-fields dt { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #475569; margin-top: 0.85rem; }
+  .identity-fields dd { color: #cbd5e1; margin: 0; margin-top: 0.85rem; }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 11px;
+    color: #475569;
+    background: #0f172a;
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 580px) {
+    .hero h1 { font-size: 2.6rem; }
+    .big-title { font-size: 1.75rem; }
+    .sae-cols { grid-template-columns: 1fr; gap: 1.25rem; }
+    .identity-fields { grid-template-columns: 1fr; }
+    .page { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ EN-TÊTE ══ -->
+<div class="hero">
+  <div class="hero-label">Portfolio académique · Semestre 5 · 2025</div>
+  <h1>ALEDJI<br><em>Ar-Rachad</em></h1>
+  <div class="hero-meta">
+    <span><div class="dot"></div>SRI3 — Systèmes Réseaux Informatique</span>
+    <span><div class="dot"></div>ESIG Global Success, Togo</span>
+    <span><div class="dot"></div>Promotion 2025</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ══ INTRODUCTION ══ -->
+  <h2 class="big-title">Introduction</h2>
+  <div class="divider"></div>
+  <div class="intro-text">
+    Le semestre 5 a constitué une étape clé de ma formation, alliant théorie avancée et projets techniques concrets. De la mise en place d'un environnement sécurisé complet (pfSense, Snort IDS/IPS, Nginx + WAF OWASP) à l'audit d'une application web réelle selon la méthodologie OWASP Top 10, en passant par la conception d'un Plan Directeur Informatique pour un bâtiment de cinq niveaux, ce semestre m'a permis de développer des compétences solides en infrastructure réseau et en cybersécurité. Il confirme mon orientation vers une spécialisation dans les réseaux sécurisés et l'administration des systèmes d'information.
+  </div>
+
+  <!-- ══ BILAN DES UE ══ -->
+  <div class="ue-section">
+    <div class="sub-label">Bilan des UE — Semestre 5</div>
+    <h3 class="sub-title">Blocs de compétences développés</h3>
+    <div class="sub-divider"></div>
+    <div class="ue-grid">
+
+      <div class="ue-card">
+        <h3>Réseaux informatiques</h3>
+        <p>Déploiement de pare-feux pfSense (règles, NAT, zones), mise en place d'un IDS/IPS avec Snort, filtrage web avec Squid Proxy et tests d'intrusion réseau avec hping3 en environnement contrôlé.</p>
+        <div class="pills">
+          <span class="pill">pfSense</span>
+          <span class="pill">Snort IDS/IPS</span>
+          <span class="pill">Squid Proxy</span>
+          <span class="pill">hping3</span>
+        </div>
+      </div>
+
+      <div class="ue-card">
+        <h3>Sécurité applicative & audit</h3>
+        <p>Audit de sécurité web selon la méthodologie OWASP Top 10 — identification et documentation de vulnérabilités (injection SQL, XSS, IDOR, broken access control) avec des outils professionnels.</p>
+        <div class="pills">
+          <span class="pill">Burp Suite</span>
+          <span class="pill">sqlmap</span>
+          <span class="pill">Hydra</span>
+          <span class="pill">OWASP Top 10</span>
+        </div>
+      </div>
+
+      <div class="ue-card">
+        <h3>Réseaux mobiles & télécommunications</h3>
+        <p>Architecture des réseaux cellulaires 2G/3G/4G/5G, protocoles de roaming, structure RAN et Core Network, enjeux de sécurité spécifiques (authentification SIM, chiffrement des communications).</p>
+        <div class="pills">
+          <span class="pill">5G / 4G / 3G</span>
+          <span class="pill">RAN</span>
+          <span class="pill">Core Network</span>
+          <span class="pill">Auth SIM</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ BILAN DES SAE ══ -->
+  <div class="sae-section">
+    <div class="sub-label">Situations d'apprentissage et d'évaluation</div>
+    <h3 class="sub-title">Bilan des SAE</h3>
+    <div class="sub-divider"></div>
+
+    <div class="sae-item">
+      <div class="sae-head">
+        <span class="sae-num">SAE 01</span>
+        <div class="sae-title">Planification complète d'un projet informatique</div>
+      </div>
+      <div class="sae-cols">
+        <div class="sae-col">
+          <h4>Savoirs acquis</h4>
+          <ul>
+            <li>Cadrer et structurer un projet de A à Z</li>
+            <li>Analyser les besoins techniques et organisationnels</li>
+            <li>Élaborer un planning Gantt avec jalons et ressources</li>
+            <li>Rédiger un dossier projet complet à destination décisionnelle</li>
+            <li>Anticiper les risques et proposer des plans de contingence</li>
+          </ul>
+        </div>
+        <div class="sae-col">
+          <h4>Compétences développées</h4>
+          <ul>
+            <li>Gestion de projet et méthodes de planification</li>
+            <li>Rédaction de documentation professionnelle structurée</li>
+            <li>Communication technique multi-interlocuteurs</li>
+            <li>Analyse des contraintes budgétaires et organisationnelles</li>
+            <li>Travail collaboratif et coordination en équipe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sae-item">
+      <div class="sae-head">
+        <span class="sae-num">SAE 02</span>
+        <div class="sae-title">Supervision avancée avec Zabbix</div>
+      </div>
+      <div class="sae-cols">
+        <div class="sae-col">
+          <h4>Savoirs acquis</h4>
+          <ul>
+            <li>Installer et configurer Zabbix Server et Zabbix Agent</li>
+            <li>Créer des hôtes, groupes et templates de supervision</li>
+            <li>Définir des triggers (seuils d'alerte) et actions automatiques</li>
+            <li>Superviser CPU, RAM, bande passante, disponibilité en temps réel</li>
+            <li>Interpréter les graphes pour le diagnostic d'incidents</li>
+          </ul>
+        </div>
+        <div class="sae-col">
+          <h4>Compétences développées</h4>
+          <ul>
+            <li>Administration d'un outil de supervision réseau et système</li>
+            <li>Configuration d'alertes et d'automatisations</li>
+            <li>Analyse et interprétation de données de performance</li>
+            <li>Détection proactive d'incidents et de pannes</li>
+            <li>Documentation des procédures de monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sae-item">
+      <div class="sae-head">
+        <span class="sae-num">SAE 03</span>
+        <div class="sae-title">Concevoir et réaliser une solution technique</div>
+      </div>
+      <div class="sae-cols">
+        <div class="sae-col">
+          <h4>Savoirs acquis</h4>
+          <ul>
+            <li>Analyser un cahier des charges et en déduire une architecture</li>
+            <li>Concevoir une solution réseau répondant à des contraintes réelles</li>
+            <li>Déployer et tester en environnement simulé ou réel</li>
+            <li>Valider le bon fonctionnement par des tests de recette</li>
+          </ul>
+        </div>
+        <div class="sae-col">
+          <h4>Compétences développées</h4>
+          <ul>
+            <li>Conception d'architecture à partir d'un besoin réel</li>
+            <li>Déploiement et intégration de composants réseau/sécurité</li>
+            <li>Tests fonctionnels et validation de solution</li>
+            <li>Présentation orale et argumentation technique</li>
+            <li>Autonomie, rigueur et gestion des imprévus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ CONCLUSION ══ -->
+  <h2 class="big-title">Conclusion</h2>
+  <div class="divider"></div>
+  <div class="conclusion-section">
+    <div class="conclusion-text">
+      Le semestre 5 a été le plus formateur de mon parcours à l'ESIG, m'amenant à franchir un cap décisif entre théorie et pratique professionnelle. À travers des projets concrets en sécurité réseau, audit applicatif et supervision système, j'ai consolidé des compétences solides qui confirment mon orientation vers les réseaux sécurisés et l'administration des systèmes d'information. Cette démarche — analyser, concevoir, déployer, documenter — est celle que je compte continuer à développer dans les semestres à venir.
+    </div>
+  </div>
+
+  <!-- ══ FICHE IDENTITÉ ══ -->
+  <div class="identity">
+    <div class="identity-top">
+      <div class="avatar">AA</div>
+      <div>
+        <h3>ALEDJI Ar-Rachad</h3>
+        <p>Étudiant en informatique — ESIG Global Success</p>
+      </div>
+    </div>
+    <dl class="identity-fields">
+      <dt>Nom complet</dt>
+      <dd>ALEDJI Ar-Rachad</dd>
+      <dt>Filière</dt>
+      <dd>SRI3 — Systèmes Réseaux Informatique</dd>
+      <dt>Établissement</dt>
+      <dd>ESIG Global Success, Togo</dd>
+      <dt>Semestre</dt>
+      <dd>Semestre 5 · 2025</dd>
+      <dt>Spécialisation</dt>
+      <dd>Réseaux sécurisés & Administration SI</dd>
+    </dl>
+  </div>
+
+</div>
+
+<footer>ALEDJI Ar-Rachad &nbsp;·&nbsp; Portfolio Semestre 5 &nbsp;·&nbsp; ESIG Global Success &nbsp;·&nbsp; 2025</footer>
+
+</body>
+</html>
